@@ -4,3 +4,4 @@ labrador = k9.Labrador()
 
 
 print(labrador.wifi.status)
+print(labrador.wifi.ip_address)
