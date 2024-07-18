@@ -16,3 +16,4 @@ from caninos_sdk.pwm import PWM
 from caninos_sdk.camera import Camera
 from caninos_sdk.serial import Serial
 from caninos_sdk.i2c import I2C
+from caninos_sdk.wifi import ConnectionInfo
