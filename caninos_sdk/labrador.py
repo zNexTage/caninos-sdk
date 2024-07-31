@@ -3,7 +3,7 @@ from caninos_sdk.pin import Pin, gpio_mappings
 from caninos_sdk.camera import Camera
 from caninos_sdk.i2c import I2CFactory
 from caninos_sdk.serial import Serial
-from caninos_sdk.wifi import ConnectionInfo
+from caninos_sdk.wifi import Wifi
 import logging, platform, caninos_sdk
 
 
@@ -27,7 +27,7 @@ class Labrador:
         self.i2c = I2CFactory(self)
         self.serial_usb = Serial(self, caninos_sdk.SERIAL_USB)
         self.serial_header40pins = Serial(self, caninos_sdk.SERIAL_HEADER_40_PINS)
-        self.wifi = ConnectionInfo()
+        self.wifi = Wifi()
         self._load_pins()
 
     def _load_pins(self):

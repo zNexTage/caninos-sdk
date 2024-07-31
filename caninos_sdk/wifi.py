@@ -97,3 +97,10 @@ class ConnectionInfo:
         socket.connect((host, port))
         
             
+class Wifi:
+    ''' Wifi manager '''
+    
+    def status(self):
+        ''' returns the connection information '''
+        
+        return ConnectionInfo()
