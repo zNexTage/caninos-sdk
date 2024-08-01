@@ -1,0 +1,2 @@
+class PackageNotInstalled(Exception):
+    pass

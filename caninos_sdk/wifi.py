@@ -1,15 +1,32 @@
 import socket
 import subprocess
+from caninos_sdk.exceptions import PackageNotInstalled
+
+''''
+This module requires 'nmcli' package.
+
+run nmcli -v in the terminal to check if the package is installed. If an error is thrown, install the package by running the command
+'sudo apt-get install network-manager -y
+'''
 
 class ConnectionInfo:
     CONNECTED = "connected"
     DISCONNECTED = "disconnected"
 
+    def __check_ncmli(self):
+        '''checks if nmcli is installed  '''
+        
+        retval = subprocess.call(['which', 'nmcli'])
+
+        if retval != 0:
+            raise PackageNotInstalled("Need to install the nmcli package. Open terminal and run the command 'sudo apt-get install network-manager'")
 
     def __init__(self):
         self.network_name = None
         self.interface = None
-        self.network_type = None        
+        self.network_type = None
+        
+        self.__check_ncmli()
 
         info = self.__get_connected_network_info()
 
